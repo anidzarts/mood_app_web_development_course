@@ -1,0 +1,17 @@
+<%- include('header.ejs') %>
+<ul>
+    <% feedbacks.forEach((feedback) => { %>
+        <%= feedback %>
+    <% }); %>
+</ul>
+<div class="container">
+<h1>Register!</h1>
+<form method="POST" action ="/auth/registration">
+    <label for="emailaddress">Email address *</label>
+    <input type="email" name="email" />
+    <label for="emailaddress">Password *</label>
+    <input type="password" name="password" />
+    <input type="submit" value="Submit!" />
+</form>
+<%- include('footer.ejs') %>
+

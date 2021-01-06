@@ -1,0 +1,35 @@
+<%- include('header.ejs') %>
+<div class="container">
+<h1>Report your mood!</h1>
+
+
+<form method="GET" action ="/behavior/reporting/morning" >
+    <input type="submit" value="Morning"/>
+</form>
+
+<form method="GET" action ="/behavior/reporting/evening" >
+    <input type="submit" value="Evening"/>
+</form>
+
+<form method ="POST" action="/behavior/summary">
+    <input  name="week" id="weekPicker" type="hidden">
+    <input  name="month" id="monthPicker" type="hidden">
+    <input type="submit" value="Statistics">
+</form>
+
+
+<form method="POST" action ="/auth/logout" >
+    <input type="submit" value="logout"/>
+</form>
+
+<script>
+    var onejan = new Date((new Date()).getFullYear(), 0, 1);
+
+var a = Math.ceil((((new Date() - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+
+document.getElementById('weekPicker').value =(new Date().getFullYear()) + "-W" + a;
+    document.getElementById('monthPicker').value =(new Date().getFullYear()) + "-" + (new Date().getMonth()+1);
+    </script>
+
+
+<%- include('footer.ejs') %>

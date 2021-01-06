@@ -1,0 +1,26 @@
+<%- include('header.ejs') %>
+
+<h1> Health control tracker </h1>
+
+
+<% if (average_generic_mood_today) { %>
+Average Mood Today: <%= average_generic_mood_today %>
+
+<% } %>
+
+<% if (average_generic_mood_yesterday) { %>
+    Average Mood Yesterday: <%= average_generic_mood_yesterday %>
+    
+    <% } %>
+
+<% if (text) { %>
+       Trend: <%= text %>
+        
+        <% } %>
+
+<br>
+<button name="login" onclick="window.location.href='auth/login'" >Login </button>
+<button name="signup"  onclick="window.location.href='auth/registration'"  > Sign Up </button>
+<button name="report"  onclick="window.location.href='behavior/reporting'">Report</button>
+<%- include('footer.ejs') %>
+

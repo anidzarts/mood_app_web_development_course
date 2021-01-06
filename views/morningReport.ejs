@@ -1,0 +1,45 @@
+<%- include('header.ejs') %>
+<div class="container">
+<h1>Morning report</h1>
+
+<form method="post" content="behavior/reporting/morning">
+
+    <label for="date">Date</label> 
+    <input type="date" id="date" name="date" required  value="<%= today %>"><br>
+
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <label for="sleep_duration">How many hours have you slept today?</label>
+    <input type="number" id="sleep_duration" name="sleep_duration" min="0" max="24">    
+</div>
+
+
+<p> </p>
+<label for="sleep_quality">Rate your sleep quality</label>
+<p>Report it from 1 to 5, where 1 is very poor and 5 is excellent.</p>
+<input type="radio" name="sleep_quality" value="1"> 1
+<input type="radio" name="sleep_quality" value="2"> 2
+<input type="radio" name="sleep_quality" value="3"> 3
+<input type="radio" name="sleep_quality" value="4"> 4
+<input type="radio" name="sleep_quality" value="5"> 5
+
+
+<p> </p>
+<label for="morning_mood">What is your generic mood?</label>
+<p>Report it from 1 to 5, where 1 is very poor and 5 is excellent.</p>
+<input type="radio" name="morning_mood" value="1"> 1
+<input type="radio" name="morning_mood" value="2"> 2
+<input type="radio" name="morning_mood" value="3"> 3
+<input type="radio" name="morning_mood" value="4"> 4
+<input type="radio" name="morning_mood" value="5"> 5
+
+
+<div class="form-group"> 
+    <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+</div>
+
+</form>
+
+
+
+<%- include('footer.ejs') %>

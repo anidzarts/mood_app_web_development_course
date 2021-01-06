@@ -1,0 +1,49 @@
+<%- include('header.ejs') %>
+<div class="container">
+<h1>Evening report</h1>
+
+<form method="post" content="behavior/reporting/evening">
+
+    <label for="date">Date</label> 
+    <input type="date" id="date" name="date" required  value="<%= today %>"><br>
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <label for="sport">How many hours have you spent on sports and exercise?</label>
+    <input type="number" id="sport" name="sport" min="0" max="24">    
+</div>
+
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <label for="study">How many hours have you spent on studying?</label>
+    <input type="number" id="study" name="study" min="0" max="24">    
+</div>
+
+<p> </p>
+<label for="eating">Rate your regularity and quality of eating</label>
+<p>Report it from 1 to 5, where 1 is very poor and 5 is excellent.</p>
+<input type="radio" name="eating" value="1"> 1
+<input type="radio" name="eating" value="2"> 2
+<input type="radio" name="eating" value="3"> 3
+<input type="radio" name="eating" value="4"> 4
+<input type="radio" name="eating" value="5"> 5
+
+<p> </p>
+<label for="evening_mood">What is your generic mood?</label>
+<p>Report it from 1 to 5, where 1 is very poor and 5 is excellent.</p>
+<input type="radio" name="evening_mood" value="1"> 1
+<input type="radio" name="evening_mood" value="2"> 2
+<input type="radio" name="evening_mood" value="3"> 3
+<input type="radio" name="evening_mood" value="4"> 4
+<input type="radio" name="evening_mood" value="5"> 5
+
+    
+
+<div class="form-group"> 
+    <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+</div>
+
+</form>
+
+
+
+<%- include('footer.ejs') %>

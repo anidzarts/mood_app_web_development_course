@@ -1,0 +1,67 @@
+
+
+<%- include('header.ejs') %>
+<div class="container">
+<h1>Statistic</h1>
+<form method ="POST" content="behavior/summary">
+    <input type="week" name="week">
+    <input type="month" name="month">
+    <input type="submit" name="submit">
+</form>
+
+
+<div class="table-data">
+    <h2>Weekly average</h2>
+        <table border="1">
+            <tr>
+                <th>Sleep duration</th>
+                <th>Time for sports</th>
+                <th> Time for studying</th>
+                <th>Sleep quality</th>
+                <th>Generic mood</th>
+            </tr>
+            
+            <% if (locals.data && locals.data.week) { %>
+                <tr>
+                    <td><%= data.week.average_sleep_duration %></td>
+                    <td><%= data.week.average_sport_duration %></td>
+                    <td><%= data.week.average_study_duration %></td>
+                    <td><%= data.week.average_sleep_quality %></td>
+                    <td><%= data.week.generic_mood %></td>
+                </tr>
+
+                <% } else{ %>  
+                    <h1>No data for the given week exists!</h1>
+            <% } %>
+        </table>
+</div>
+
+<div class="table-data">
+    <h2>Monthly average</h2>
+        <table border="1">
+            <tr>
+                <th>Sleep duration</th>
+                <th>Time for sports</th>
+                <th> Time for studying</th>
+                <th>Sleep quality</th>
+                <th>Generic mood</th>
+            </tr>
+            <% if (locals.data && locals.data.month) { %>
+                <tr>
+                    <td><%= data.month.average_sleep_duration %></td>
+                    <td><%= data.month.average_sport_duration %></td>
+                    <td><%= data.month.average_study_duration %></td>
+                    <td><%= data.month.average_sleep_quality %></td>
+                    <td><%= data.month.generic_mood %></td>
+                </tr>
+
+                <% } else{ %>  
+                    
+                    <h1>No data for the given month exists!</h1>
+            <% } %>
+
+        </table>
+</div>
+
+
+<%- include('footer.ejs') %>
