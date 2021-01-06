@@ -2,7 +2,7 @@
 
 The application has been deployed in this location:
 
-https://deno-names-for-web.herokuapp.com/
+https://self-control-web-app.herokuapp.com
 
 
 ## Creating Database
